@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #555;
+        }
+        .logout-button {
+            display: inline-block;
+            background-color: #d9534f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        .logout-button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exam Results</h1>
+        <div class="result">
+            <p>Total Questions Attempted: <span id="attempted">0</span></p>
+            <p>Marks Scored: <span id="score">0</span></p>
+        </div>
+        <a class="logout-button" th:href="@{/login}">Logout</a>
+    </div>
+    <script>
+        // Mock data: In real scenario, this data will come from backend/server
+        const totalQuestions = 10;
+        const correctAnswers = 7; // Example score, replace with actual calculation
+
+        document.getElementById("attempted").textContent = totalQuestions;
+        document.getElementById("score").textContent = correctAnswers;
+
+        // Add functionality for dynamic data (uncomment and modify as needed)
+        /*
+        const urlParams = new URLSearchParams(window.location.search);
+        const attempted = urlParams.get('attempted') || 0;
+        const score = urlParams.get('score') || 0;
+
+        document.getElementById("attempted").textContent = attempted;
+        document.getElementById("score").textContent = score;
+        */
+    </script>
+</body>
+</html>

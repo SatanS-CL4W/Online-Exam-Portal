@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Instructions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 60%;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #555;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .start-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .start-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exam Instructions</h1>
+        <p>Please read the following instructions carefully before starting the exam:</p>
+        <ul>
+            <li>The exam duration is 10 Minutes.</li>
+            <li>You are not allowed to use any external resources or devices.</li>
+            <li>Make sure to save your answers frequently.</li>
+            <li>Do not refresh the page during the exam.</li>
+            <li>If you encounter any issues, contact the exam supervisor immediately.</li>
+            <li>Ensure you have a stable internet connection throughout the exam.</li>
+            <li>Submit your answers before the time expires.</li>
+        </ul>
+        <div class="button-container">
+            <form th:action="@{/start-exam}" method="post"> <!-- Added form tag -->
+                <button class="start-button" type="submit">Start Exam</button>
+            </form> <!-- Closing form tag -->
+        </div>
+    </div>
+    <script>
+        function startExam() {
+            // Add the functionality to start the exam
+            alert("The exam has started!");
+            // You can redirect to the exam page or initialize the exam here
+        }
+    </script>
+</body>
+</html>
